@@ -1,2 +1,2 @@
-./huulk/node_modules
-
+./huulk/node_modules/*
+./huulk/build/*
