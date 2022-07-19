@@ -1,0 +1,27 @@
+datasource localTestingDb {
+    url="file:./sessionStore.db"
+    provider="sqlite"
+}
+
+generator ClientGenerator {
+    provider="prisma-client-js"
+}
+
+model HuulkSessionMetaData {
+    username String @id
+    sessionCount Int @default(0)
+}
+model HuulkSession {
+    username String 
+    id String @id()@default(uuid())
+    maxAge DateTime @default(now())
+    createdAt DateTime @default(now())
+    csrfToken String @default(uuid())
+    userData String
+}
+
+model HuulkThrottle {
+    username String @id()
+    hitCount Int @default(0)
+
+}

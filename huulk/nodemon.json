@@ -1,0 +1,6 @@
+{
+    "watch": ["src"],
+    "ext": "ts",
+    "ignore": ["src/**/*.spec.ts","src/**/*.js"],
+    "exec": "dpdm --no-warning --no-tree ./src/server.ts && npx tsc && node ./build/serverTesting.js " 
+}
